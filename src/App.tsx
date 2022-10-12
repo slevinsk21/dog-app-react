@@ -29,6 +29,12 @@ const theme = createTheme({
   palette: { mode: 'dark' }
 });
 
+const initialSubBreed = {
+  breedName: '',
+  subBreedName: '',
+  image: ''
+};
+
 function App() {
   const [breed, setBreed] = useState<Breed>();
   const [subBreed, setSubBreed] = useState<SubBreedByBreedName>();
@@ -41,6 +47,7 @@ function App() {
       if (label) {
         const breed = await getBreedByName(label);
         setBreed({ ...breed, subBreeds });
+        setSubBreed(initialSubBreed);
       }
     } catch (e) {
       console.error('Error: ( cmp ) => ', e);
