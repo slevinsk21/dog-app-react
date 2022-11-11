@@ -50,7 +50,7 @@ function App() {
         setSubBreed(initialSubBreed);
       }
     } catch (e) {
-      console.error('Error: ( cmp ) => ', e);
+      console.error('Error: ( cmp ) =>', e);
     } finally {
       setLoading(false);
     }
